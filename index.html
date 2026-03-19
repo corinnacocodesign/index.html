@@ -3,21 +3,23 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>COCO DESIGN | Shopify, Web Design & Branding</title>
+  <title>COCO DESIGN | Web Design, Shopify & Branding</title>
   <meta
     name="description"
-    content="COCO DESIGN creates premium Shopify websites, branding and digital marketing solutions for small businesses."
+    content="COCO DESIGN creates beautiful websites, ecommerce stores and branding for small businesses."
   />
   <style>
     :root {
-      --bg: #f7f5f3;
+      --bg: #f7f4f6;
       --surface: #ffffff;
       --ink: #434866;
-      --ink-soft: #66708a;
+      --ink-soft: #6f7690;
       --accent: #8c2a68;
-      --accent-dark: #6f204f;
+      --accent-soft: #b57ba0;
+      --hero-start: #4a5070;
+      --hero-end: #8c2a68;
       --line: rgba(67, 72, 102, 0.12);
-      --shadow: 0 18px 50px rgba(67, 72, 102, 0.10);
+      --shadow: 0 20px 60px rgba(67, 72, 102, 0.12);
       --radius: 24px;
       --max: 1160px;
     }
@@ -49,7 +51,7 @@
     }
 
     a:hover {
-      color: var(--accent-dark);
+      opacity: 0.9;
     }
 
     .container {
@@ -61,17 +63,17 @@
       position: sticky;
       top: 0;
       z-index: 50;
-      background: rgba(247, 245, 243, 0.92);
+      background: rgba(247, 244, 246, 0.92);
       backdrop-filter: blur(10px);
       border-bottom: 1px solid var(--line);
     }
 
     .nav-inner {
       display: flex;
-      align-items: center;
       justify-content: space-between;
+      align-items: center;
       gap: 20px;
-      padding: 14px 0;
+      padding: 16px 0;
     }
 
     .brand {
@@ -83,10 +85,20 @@
       color: var(--ink);
     }
 
-    .brand img {
-      width: 40px;
-      height: 40px;
-      object-fit: contain;
+    .brand-mark {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      overflow: hidden;
+      flex-shrink: 0;
+      background: #fff;
+      border: 1px solid var(--line);
+    }
+
+    .brand-mark img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
     }
 
     .nav-links {
@@ -105,24 +117,48 @@
     }
 
     .hero {
-      padding: 44px 0 30px;
+      padding: 42px 0 28px;
     }
 
     .hero-card {
-      background: linear-gradient(135deg, #434866 0%, #505778 55%, #8c2a68 100%);
-      color: #ffffff;
-      border-radius: 32px;
+      background: linear-gradient(135deg, var(--hero-start) 0%, #59617f 45%, var(--hero-end) 100%);
+      color: white;
+      border-radius: 34px;
       padding: 34px;
-      box-shadow: var(--shadow);
-      overflow: hidden;
+      box-shadow: 0 30px 80px rgba(67, 72, 102, 0.20);
       position: relative;
+      overflow: hidden;
+    }
+
+    .hero-card::before {
+      content: "";
+      position: absolute;
+      top: -140px;
+      right: -120px;
+      width: 340px;
+      height: 340px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.08);
+    }
+
+    .hero-card::after {
+      content: "";
+      position: absolute;
+      bottom: -140px;
+      left: -120px;
+      width: 300px;
+      height: 300px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.05);
     }
 
     .hero-grid {
       display: grid;
-      grid-template-columns: 1.2fr 0.8fr;
+      grid-template-columns: 1.15fr 0.85fr;
       gap: 28px;
       align-items: center;
+      position: relative;
+      z-index: 1;
     }
 
     .eyebrow {
@@ -138,17 +174,18 @@
     }
 
     .hero h1 {
-      font-size: clamp(2.4rem, 5vw, 4.8rem);
-      line-height: 0.98;
       margin: 0 0 18px;
+      font-size: clamp(2.7rem, 5vw, 5.2rem);
+      line-height: 0.95;
       letter-spacing: -0.04em;
+      font-weight: 700;
     }
 
     .hero p {
-      font-size: 1.08rem;
-      max-width: 640px;
       margin: 0 0 28px;
+      font-size: 1.08rem;
       color: rgba(255,255,255,0.92);
+      max-width: 640px;
     }
 
     .hero-actions {
@@ -161,12 +198,12 @@
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      min-height: 48px;
+      min-height: 50px;
       padding: 0 22px;
       border-radius: 999px;
       font-weight: 700;
-      transition: 0.2s ease;
       border: 1px solid transparent;
+      transition: 0.2s ease;
     }
 
     .btn-primary {
@@ -180,7 +217,7 @@
 
     .btn-secondary {
       background: transparent;
-      color: #ffffff;
+      color: white;
       border-color: rgba(255,255,255,0.35);
     }
 
@@ -193,8 +230,7 @@
       gap: 18px;
     }
 
-    .logo-panel,
-    .mini-panel,
+    .panel,
     .section-card,
     .service-card,
     .testimonial,
@@ -202,32 +238,45 @@
       background: var(--surface);
       border-radius: var(--radius);
       box-shadow: var(--shadow);
-      border: 1px solid rgba(255,255,255,0.75);
+      border: 1px solid rgba(255,255,255,0.8);
     }
 
     .logo-panel {
+      min-height: 330px;
       padding: 28px;
       display: grid;
       place-items: center;
-      min-height: 280px;
+      background: rgba(255,255,255,0.96);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
     }
 
     .logo-panel img {
-      width: min(100%, 290px);
+      width: min(100%, 320px);
+      height: auto;
       object-fit: contain;
     }
 
     .mini-panel {
-      padding: 22px;
+      padding: 24px;
+      background: rgba(255,255,255,0.96);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
     }
 
     .mini-panel strong {
       display: block;
-      margin-bottom: 6px;
+      margin-bottom: 8px;
       color: var(--accent);
-      font-size: 0.95rem;
       text-transform: uppercase;
-      letter-spacing: 0.08em;
+      letter-spacing: 0.10em;
+      font-size: 0.92rem;
+    }
+
+    .mini-panel p {
+      margin: 0;
+      color: var(--ink);
+      font-size: 1rem;
     }
 
     section {
@@ -235,7 +284,7 @@
     }
 
     .section-card {
-      padding: 34px;
+      padding: 36px;
     }
 
     .section-label {
@@ -244,20 +293,26 @@
       text-transform: uppercase;
       letter-spacing: 0.14em;
       font-weight: 700;
-      margin-bottom: 10px;
+      margin-bottom: 12px;
     }
 
     h2 {
+      margin: 0 0 14px;
       font-size: clamp(1.8rem, 3vw, 3rem);
       line-height: 1.05;
-      margin: 0 0 14px;
       letter-spacing: -0.03em;
     }
 
+    h3 {
+      margin-top: 0;
+      margin-bottom: 10px;
+      font-size: 1.18rem;
+    }
+
     .lead {
-      font-size: 1.04rem;
-      color: var(--ink-soft);
       max-width: 760px;
+      color: var(--ink-soft);
+      font-size: 1.04rem;
     }
 
     .about-grid {
@@ -284,12 +339,6 @@
       padding: 28px;
     }
 
-    .service-card h3 {
-      margin-top: 0;
-      margin-bottom: 10px;
-      font-size: 1.2rem;
-    }
-
     .service-card p {
       margin: 0;
       color: var(--ink-soft);
@@ -310,8 +359,8 @@
     }
 
     .step-number {
-      width: 38px;
-      height: 38px;
+      width: 40px;
+      height: 40px;
       border-radius: 999px;
       background: rgba(140, 42, 104, 0.10);
       color: var(--accent);
@@ -338,14 +387,14 @@
     }
 
     .testimonial strong {
-      color: var(--ink);
       display: block;
       margin-top: 12px;
+      color: var(--ink);
       letter-spacing: 0.03em;
     }
 
     .contact-card {
-      padding: 34px;
+      padding: 36px;
       display: grid;
       grid-template-columns: 1.1fr 0.9fr;
       gap: 26px;
@@ -353,7 +402,7 @@
     }
 
     .contact-box {
-      padding: 20px;
+      padding: 22px;
       border: 1px solid var(--line);
       border-radius: 18px;
       background: rgba(67, 72, 102, 0.03);
@@ -361,9 +410,9 @@
 
     footer {
       padding: 28px 0 40px;
+      text-align: center;
       color: var(--ink-soft);
       font-size: 14px;
-      text-align: center;
     }
 
     @media (max-width: 980px) {
@@ -377,8 +426,8 @@
       }
 
       .nav-inner {
-        align-items: flex-start;
         flex-direction: column;
+        align-items: flex-start;
       }
 
       .hero-card,
@@ -399,7 +448,7 @@
       }
 
       .hero h1 {
-        font-size: 2.2rem;
+        font-size: 2.3rem;
       }
 
       .btn {
@@ -409,6 +458,10 @@
       .hero-actions {
         flex-direction: column;
       }
+
+      .logo-panel {
+        min-height: 250px;
+      }
     }
   </style>
 </head>
@@ -417,9 +470,12 @@
   <nav class="nav">
     <div class="container nav-inner">
       <div class="brand">
-        <img src="badge.png" alt="COCO DESIGN badge logo">
+        <div class="brand-mark">
+          <img src="./badge.png" alt="COCO DESIGN logo">
+        </div>
         <span>COCO DESIGN</span>
       </div>
+
       <div class="nav-links">
         <a href="#about">About</a>
         <a href="#services">Services</a>
@@ -439,10 +495,11 @@
               <span class="eyebrow">Premium web design for small business</span>
               <h1>Beautiful websites that feel elevated and work hard for your business.</h1>
               <p>
-                COCO DESIGN creates bespoke Shopify websites, branding and digital marketing support
-                for businesses that want a polished online presence, clear messaging and a site that
-                feels as professional as the work they do.
+                COCO DESIGN creates bespoke websites, ecommerce experiences and branding support
+                for businesses that want a polished online presence, clear messaging and a site
+                that feels as professional as the work they do.
               </p>
+
               <div class="hero-actions">
                 <a class="btn btn-primary" href="#contact">Start your project</a>
                 <a class="btn btn-secondary" href="#services">View services</a>
@@ -451,12 +508,14 @@
 
             <div class="hero-side">
               <div class="logo-panel">
-                <img src="logo.png" alt="COCO DESIGN logo">
+                <img src="./badge.png" alt="COCO DESIGN badge logo">
               </div>
 
               <div class="mini-panel">
                 <strong>What I do</strong>
-                Shopify websites, web design, branding and digital marketing support tailored to your business.
+                <p>
+                  Website design, ecommerce, branding and digital support tailored to your business.
+                </p>
               </div>
             </div>
           </div>
@@ -468,31 +527,31 @@
       <div class="container">
         <div class="section-card">
           <div class="section-label">About</div>
-          <h2>Design that feels considered, strategic and genuinely bespoke.</h2>
+          <h2>Design that feels polished, strategic and genuinely bespoke.</h2>
           <p class="lead">
-            Whether you are launching something new or refining your online presence, I create
-            user-friendly, visually strong websites that reflect your brand identity and support
-            growth. The aim is simple: a site that looks premium, feels easy to use and helps your
-            business move forward.
+            I create clean, modern websites for small businesses that want to look more established
+            online. The goal is a site that feels premium, reflects your brand properly and helps
+            turn visitors into genuine enquiries.
           </p>
 
           <div class="about-grid">
             <div>
-              <h3>Why clients come to COCO DESIGN</h3>
+              <h3>Why clients choose COCO DESIGN</h3>
               <ul class="list">
-                <li>Bespoke websites with a polished, brand-led feel</li>
-                <li>Shopify and ecommerce support for selling online</li>
-                <li>Clean, user-friendly layouts built for clarity</li>
-                <li>Branding and digital touchpoints that feel consistent</li>
+                <li>Bespoke websites with a refined, brand-led feel</li>
+                <li>Clean and user-friendly design that feels professional</li>
+                <li>Support with ecommerce, branding and digital presence</li>
+                <li>A personal, collaborative approach from start to finish</li>
               </ul>
             </div>
+
             <div>
-              <h3>Ideal for</h3>
+              <h3>Perfect for</h3>
               <ul class="list">
-                <li>Small businesses ready to look more established</li>
-                <li>Founders who need a site that reflects their standards</li>
-                <li>Brands moving from DIY to something more refined</li>
-                <li>Businesses that want support beyond just the website build</li>
+                <li>Small businesses ready to move beyond DIY</li>
+                <li>Brands that want a more elevated online presence</li>
+                <li>Business owners who want support, not just a template</li>
+                <li>Founders who care about quality and presentation</li>
               </ul>
             </div>
           </div>
@@ -506,56 +565,50 @@
           <div class="section-label">Services</div>
           <h2>What I can help with</h2>
           <p class="lead">
-            From full website design to ecommerce and brand presentation, everything is tailored to
-            suit your business, your audience and the way you want to show up online.
+            Every project is tailored to your business, your goals and how you want your brand to
+            come across online.
           </p>
 
           <div class="services-grid">
             <article class="service-card">
-              <h3>Shopify Websites</h3>
+              <h3>Website Design</h3>
               <p>
-                Premium Shopify setup and design for businesses that need a storefront that feels
-                polished, trustworthy and easy to navigate.
+                Bespoke brochure-style websites for businesses that need a polished, modern online presence.
               </p>
             </article>
 
             <article class="service-card">
-              <h3>Website Design</h3>
+              <h3>Ecommerce</h3>
               <p>
-                Bespoke brochure-style websites for service businesses that want a stronger online
-                presence and a more elevated first impression.
+                Online shop design and setup focused on trust, clarity and a smooth customer experience.
               </p>
             </article>
 
             <article class="service-card">
               <h3>Branding Support</h3>
               <p>
-                Visual direction, brand consistency and supporting design elements that help your
-                business feel cohesive across web and marketing.
+                Design direction and visual consistency so your website feels aligned with your brand.
               </p>
             </article>
 
             <article class="service-card">
-              <h3>Ecommerce Design</h3>
+              <h3>Website Refreshes</h3>
               <p>
-                Product-led layouts, category structures and content presentation designed to support
-                browsing, confidence and conversion.
+                A cleaner, stronger redesign if your current site no longer reflects the level of your business.
               </p>
             </article>
 
             <article class="service-card">
-              <h3>Digital Marketing</h3>
+              <h3>Digital Support</h3>
               <p>
-                Thoughtful digital support to help your website work harder once it is live, with a
-                focus on visibility, engagement and growth.
+                Extra help with your wider online presence so your website works harder once it is live.
               </p>
             </article>
 
             <article class="service-card">
-              <h3>Ongoing Support</h3>
+              <h3>Ongoing Updates</h3>
               <p>
-                Help when you need updates, guidance or someone on hand who already understands your
-                website and brand.
+                Continued support for content changes, improvements and keeping everything feeling current.
               </p>
             </article>
           </div>
@@ -567,10 +620,10 @@
       <div class="container">
         <div class="section-card">
           <div class="section-label">Process</div>
-          <h2>A calm, clear process from first idea to launch</h2>
+          <h2>A straightforward process from idea to launch</h2>
           <p class="lead">
-            The goal is to make the process feel straightforward, collaborative and well-managed,
-            especially if this is your first proper website project.
+            The process is designed to feel calm, collaborative and easy to follow, even if this is
+            your first proper website project.
           </p>
 
           <div class="process-grid">
@@ -578,7 +631,7 @@
               <div class="step-number">1</div>
               <h3>Discover</h3>
               <p>
-                We clarify your business, your goals and the feel you want your brand to communicate.
+                We look at your business, your goals and the feel you want your brand to communicate.
               </p>
             </div>
 
@@ -586,7 +639,7 @@
               <div class="step-number">2</div>
               <h3>Design</h3>
               <p>
-                I shape a refined visual direction with thoughtful layout, messaging and user flow.
+                I shape the visual direction, layout and messaging into something clear and considered.
               </p>
             </div>
 
@@ -594,7 +647,7 @@
               <div class="step-number">3</div>
               <h3>Launch</h3>
               <p>
-                Your site goes live with a clean finish, and support is there if you need the next steps.
+                Your website goes live with support in place if you need help with the next steps.
               </p>
             </div>
           </div>
@@ -608,8 +661,8 @@
           <div class="section-label">Testimonials</div>
           <h2>Kind words from clients</h2>
           <p class="lead">
-            A few things clients have highlighted are creativity, support, professionalism,
-            affordability and making the whole process feel easy.
+            Clients often mention the creativity, support, professionalism and how easy the whole
+            process feels.
           </p>
 
           <div class="testimonials-grid">
@@ -648,17 +701,20 @@
             <div class="section-label">Contact</div>
             <h2>Ready for a website that feels more like your brand?</h2>
             <p class="lead">
-              If you want a more elevated online presence, get in touch and I can help shape a site
-              that looks polished, feels aligned and supports your business properly.
+              If you want a site that feels polished, modern and aligned with your business, get in touch.
             </p>
-            <a class="btn btn-primary" href="mailto:your@email.com">Email COCO DESIGN</a>
+
+            <a class="btn btn-primary" href="mailto:corinnacocodesign@gmail.com">
+              Email COCO DESIGN
+            </a>
           </div>
 
           <div class="contact-box">
             <h3>Contact details</h3>
-            <p><strong>Email:</strong> <a href="mailto:your@email.com">your@email.com</a></p>
-            <p><strong>Instagram:</strong> <a href="#">@yourinstagram</a></p>
-            <p><strong>Facebook:</strong> <a href="#">Your Facebook Page</a></p>
+            <p>
+              <strong>Email:</strong>
+              <a href="mailto:corinnacocodesign@gmail.com">corinnacocodesign@gmail.com</a>
+            </p>
             <p><strong>Location:</strong> Northern Ireland</p>
           </div>
         </div>
