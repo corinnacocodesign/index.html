@@ -11,41 +11,6 @@
   <link rel="icon" type="image/png" href="./favicon.png" />
 
   <style>
-.contact-action {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  margin-top: 20px;
-}
-
-.contact-icon {
-  width: 44px;
-  height: 44px;
-  border-radius: 50%;
-  background: rgba(140, 42, 104, 0.12);
-  color: var(--accent);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.contact-link {
-  font-weight: 600;
-  color: var(--ink);
-}.btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px; /* spacing between icon + text */
-}
-
-.btn-icon {
-  display: flex;
-  align-items: center;
-}
-.btn:hover svg {
-  transform: translateX(2px);
-  transition: 0.2s ease;
-}
     :root {
       --bg: #f7f4f6;
       --surface: #ffffff;
@@ -292,13 +257,12 @@
     .section-card,
     .service-card,
     .testimonial,
-.contact-card {
-  padding: 36px;
-  display: grid;
-  grid-template-columns: 1.2fr 0.8fr;
-  gap: 40px;
-  align-items: center;
-}
+    .contact-card {
+      background: var(--surface);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      border: 1px solid rgba(255,255,255,0.8);
+    }
 
     .logo-panel {
       min-height: 330px;
@@ -456,9 +420,9 @@
     .contact-card {
       padding: 36px;
       display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
-      gap: 26px;
-      align-items: start;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 40px;
+      align-items: center;
     }
 
     .contact-box {
@@ -468,60 +432,29 @@
       background: rgba(67, 72, 102, 0.03);
     }
 
-    footer {
-      padding: 28px 0 40px;
-      text-align: center;
-      color: var(--ink-soft);
-      font-size: 14px;
+    .contact-action {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-top: 20px;
     }
 
-    @media (max-width: 980px) {
-      .hero-grid,
-      .about-grid,
-      .services-grid,
-      .process-grid,
-      .testimonials-grid,
-      .contact-card {
-        grid-template-columns: 1fr;
-      }
-
-      .nav-inner {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-
-      .hero-card,
-      .section-card,
-      .contact-card {
-        padding: 26px;
-      }
+    .contact-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: rgba(140, 42, 104, 0.12);
+      color: var(--accent);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
     }
 
-    @media (max-width: 640px) {
-      .nav-links {
-        gap: 12px;
-        font-size: 13px;
-      }
-
-      .hero {
-        padding-top: 24px;
-      }
-
-      .hero h1 {
-        font-size: 2.3rem;
-      }
-
-      .btn {
-        width: 100%;
-      }
-
-      .hero-actions {
-        flex-direction: column;
-      }
-
-      .logo-panel {
-        min-height: 250px;
-      }
+    .contact-link {
+      font-weight: 600;
+      color: var(--ink);
+      font-size: 1rem;
     }
 
     .portfolio-grid {
@@ -537,6 +470,9 @@
       overflow: hidden;
       cursor: pointer;
       background: #ddd;
+      text-decoration: none;
+      color: inherit;
+      display: block;
     }
 
     .portfolio-item img {
@@ -578,29 +514,72 @@
       font-size: 0.92rem;
       opacity: 0.92;
     }
+
     .portfolio-overlay::after {
-  content: "View Project →";
-  font-size: 0.85rem;
-  margin-top: 6px;
-  opacity: 0.85;
-}
-  .portfolio-overlay::after {
-  content: "View Project →";
-  font-size: 0.85rem;
-  margin-top: 6px;
-  opacity: 0.85;
-}  
-.portfolio-item {
-  text-decoration: none;
-  color: inherit;
-}
+      content: "View Project →";
+      font-size: 0.85rem;
+      margin-top: 6px;
+      opacity: 0.85;
+    }
+
+    footer {
+      padding: 28px 0 40px;
+      text-align: center;
+      color: var(--ink-soft);
+      font-size: 14px;
+    }
+
     @media (max-width: 980px) {
+      .hero-grid,
+      .about-grid,
+      .services-grid,
+      .process-grid,
+      .testimonials-grid,
+      .contact-card,
       .portfolio-grid {
         grid-template-columns: 1fr;
       }
 
+      .nav-inner {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .hero-card,
+      .section-card,
+      .contact-card {
+        padding: 26px;
+      }
+
       .portfolio-item img {
         height: 220px;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .nav-links {
+        gap: 12px;
+        font-size: 13px;
+      }
+
+      .hero {
+        padding-top: 24px;
+      }
+
+      .hero h1 {
+        font-size: 2.3rem;
+      }
+
+      .btn {
+        width: 100%;
+      }
+
+      .hero-actions {
+        flex-direction: column;
+      }
+
+      .logo-panel {
+        min-height: 250px;
       }
     }
   </style>
@@ -834,75 +813,66 @@
     </section>
 
     <section id="portfolio">
-  <div class="container">
-    <div class="section-card">
-      <div class="section-label">Portfolio</div>
-      <h2>Recent work</h2>
-      <p class="lead">
-        A selection of recent projects focused on clean design, strong branding and websites that feel premium and perform.
-      </p>
+      <div class="container">
+        <div class="section-card">
+          <div class="section-label">Portfolio</div>
+          <h2>Recent work</h2>
+          <p class="lead">
+            A selection of recent projects focused on clean design, strong branding and websites that feel premium and perform.
+          </p>
 
-<section id="portfolio">
-  <div class="container">
-    <div class="section-card">
-      <div class="section-label">Portfolio</div>
-      <h2>Recent work</h2>
-      <p class="lead">
-        A selection of recent projects focused on clean design, strong branding and websites that feel premium and perform.
-      </p>
+          <div class="portfolio-grid">
+            <a href="https://kispizzacoffee.com" target="_blank" rel="noopener noreferrer" class="portfolio-item">
+              <img src="./project1.png" alt="KIS Coffee Bar website">
+              <div class="portfolio-overlay">
+                <h3>KIS Coffee Bar</h3>
+                <p>Coffee & Pizza Website</p>
+              </div>
+            </a>
 
-      <div class="portfolio-grid">
-        <a href="https://kispizzacoffee.com" target="_blank" rel="noopener noreferrer" class="portfolio-item">
-          <img src="./project1.png" alt="KIS Coffee Bar website">
-          <div class="portfolio-overlay">
-            <h3>KIS Coffee Bar</h3>
-            <p>Coffee & Pizza Website</p>
+            <a href="https://twoguyscoffee.co.uk" target="_blank" rel="noopener noreferrer" class="portfolio-item">
+              <img src="./project3.png" alt="Two Guys Coffee">
+              <div class="portfolio-overlay">
+                <h3>Two Guys Coffee</h3>
+                <p>Ecommerce design</p>
+              </div>
+            </a>
+
+            <a href="https://blockbustersenvironmental.com" target="_blank" rel="noopener noreferrer" class="portfolio-item">
+              <img src="./project4.png" alt="Blockbusters Environmental Services">
+              <div class="portfolio-overlay">
+                <h3>Blockbusters</h3>
+                <p>Corporate Website</p>
+              </div>
+            </a>
+
+            <a href="https://bladecyclesolutions.com" target="_blank" rel="noopener noreferrer" class="portfolio-item">
+              <img src="./project5.png" alt="Bladecycle Solutions">
+              <div class="portfolio-overlay">
+                <h3>Bladecycle Solutions</h3>
+                <p>Sustainability Website</p>
+              </div>
+            </a>
+
+            <a href="https://relineuvdistribution.com" target="_blank" rel="noopener noreferrer" class="portfolio-item">
+              <img src="./project6.png" alt="Reline UV Distribution">
+              <div class="portfolio-overlay">
+                <h3>Reline UV Distribution</h3>
+                <p>Industrial Liners</p>
+              </div>
+            </a>
+
+            <a href="https://beautyontheloft.com" target="_blank" rel="noopener noreferrer" class="portfolio-item">
+              <img src="./project7.png" alt="Beauty on the Loft">
+              <div class="portfolio-overlay">
+                <h3>Beauty on the Loft</h3>
+                <p>Luxury ecommerce</p>
+              </div>
+            </a>
           </div>
-        </a>
-
-        <a href="https://twoguyscoffee.co.uk" target="_blank" rel="noopener noreferrer" class="portfolio-item">
-          <img src="./project3.png" alt="Two Guys Coffee">
-          <div class="portfolio-overlay">
-            <h3>Two Guys Coffee</h3>
-            <p>Ecommerce design</p>
-          </div>
-        </a>
-
-        <a href="https://blockbustersenvironmental.com" target="_blank" rel="noopener noreferrer" class="portfolio-item">
-          <img src="./project4.png" alt="Blockbusters Environmental Services">
-          <div class="portfolio-overlay">
-            <h3>Blockbusters</h3>
-            <p>Corporate Website</p>
-          </div>
-        </a>
-
-        <a href="https://bladecyclesolutions.com" target="_blank" rel="noopener noreferrer" class="portfolio-item">
-          <img src="./project5.png" alt="Bladecycle Solutions">
-          <div class="portfolio-overlay">
-            <h3>Bladecycle Solutions</h3>
-            <p>Sustainability Website</p>
-          </div>
-        </a>
-
-        <a href="https://relineuvdistribution.com" target="_blank" rel="noopener noreferrer" class="portfolio-item">
-          <img src="./project6.png" alt="Reline UV Distribution">
-          <div class="portfolio-overlay">
-            <h3>Reline UV Distribution</h3>
-            <p>Industrial Liners</p>
-          </div>
-        </a>
-
-        <a href="https://beautyontheloft.com" target="_blank" rel="noopener noreferrer" class="portfolio-item">
-          <img src="./project7.png" alt="Beauty on the Loft">
-          <div class="portfolio-overlay">
-            <h3>Beauty on the Loft</h3>
-            <p>Luxury ecommerce</p>
-          </div>
-        </a>
+        </div>
       </div>
-    </div>
-  </div>
-</section>
+    </section>
 
     <section id="contact">
       <div class="container">
@@ -915,18 +885,19 @@
               marketing support available too, get in touch.
             </p>
 
-<div class="contact-action">
-  <span class="contact-icon">
-    <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
-      <path d="M4 6h16v12H4z" stroke="currentColor" stroke-width="2"/>
-      <path d="M4 6l8 6 8-6" stroke="currentColor" stroke-width="2"/>
-    </svg>
-  </span>
+            <div class="contact-action">
+              <span class="contact-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path d="M4 6h16v12H4z" stroke="currentColor" stroke-width="2"/>
+                  <path d="M4 6l8 6 8-6" stroke="currentColor" stroke-width="2"/>
+                </svg>
+              </span>
 
-  <a href="mailto:info@cocowebdesign.co.uk" class="contact-link">
-    Email Corinna
-  </a>
-</div>
+              <a href="mailto:info@cocowebdesign.co.uk" class="contact-link">
+                Email Corinna
+              </a>
+            </div>
+          </div>
 
           <div class="contact-box">
             <h3>Contact details</h3>
