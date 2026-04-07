@@ -1,1 +1,882 @@
-<!DOCTYPE html> <html lang="en"> <head> <meta charset="UTF-8" /> <meta name="viewport" content="width=device-width, initial-scale=1.0" /> <title>COCO DESIGN | Freelance Web Design, Ecommerce & Digital Marketing</title> <meta name="description" content="COCO DESIGN offers freelance web design, ecommerce and digital marketing support for small businesses." /> <link rel="icon" type="image/png" href="./favicon.png" /> <style> :root { --bg: #f7f4f6; --surface: #ffffff; --ink: #434866; --ink-soft: #6f7690; --accent: #8c2a68; --accent-soft: #b57ba0; --hero-start: #4a5070; --hero-end: #8c2a68; --line: rgba(67, 72, 102, 0.12); --shadow: 0 20px 60px rgba(67, 72, 102, 0.12); --radius: 24px; --max: 1160px; } * { box-sizing: border-box; } html { scroll-behavior: smooth; } body { margin: 0; font-family: Arial, sans-serif; background: var(--bg); color: var(--ink); line-height: 1.6; } img { max-width: 100%; display: block; } a { color: var(--accent); text-decoration: none; } a:hover { opacity: 0.9; } .container { width: min(var(--max), calc(100% - 32px)); margin: 0 auto; } .nav { position: sticky; top: 0; z-index: 50; background: rgba(247, 244, 246, 0.92); backdrop-filter: blur(10px); border-bottom: 1px solid var(--line); } .nav-inner { display: flex; justify-content: space-between; align-items: center; gap: 20px; padding: 16px 0; } .brand { display: flex; align-items: center; gap: 12px; font-weight: 700; letter-spacing: 0.08em; color: var(--ink); } .brand-mark { width: 42px; height: 42px; border-radius: 50%; overflow: hidden; flex-shrink: 0; background: #fff; border: 1px solid var(--line); } .brand-mark img { width: 100%; height: 100%; object-fit: cover; } .nav-links { display: flex; gap: 20px; flex-wrap: wrap; font-size: 14px; } .nav-links a { color: var(--ink); } .nav-links a:hover { color: var(--accent); } .hero { padding: 42px 0 28px; } .hero-card { background: linear-gradient(135deg, var(--hero-start) 0%, #59617f 45%, var(--hero-end) 100%); color: white; border-radius: 34px; padding: 34px; box-shadow: 0 30px 80px rgba(67, 72, 102, 0.20); position: relative; overflow: hidden; } .hero-card::before { content: ""; position: absolute; top: -140px; right: -120px; width: 340px; height: 340px; border-radius: 50%; background: rgba(255, 255, 255, 0.08); } .hero-card::after { content: ""; position: absolute; bottom: -140px; left: -120px; width: 300px; height: 300px; border-radius: 50%; background: rgba(255, 255, 255, 0.05); } .hero-grid { display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 28px; align-items: center; position: relative; z-index: 1; } .eyebrow { display: inline-block; padding: 8px 14px; border-radius: 999px; background: rgba(255,255,255,0.14); font-size: 12px; text-transform: uppercase; letter-spacing: 0.12em; font-weight: 700; margin-bottom: 18px; } .hero h1 { margin: 0 0 18px; font-size: clamp(2.7rem, 5vw, 5.2rem); line-height: 0.95; letter-spacing: -0.04em; font-weight: 700; } .hero p { margin: 0 0 28px; font-size: 1.08rem; color: rgba(255,255,255,0.92); max-width: 640px; } .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; } .btn { display: inline-flex; align-items: center; justify-content: center; min-height: 50px; padding: 0 22px; border-radius: 999px; font-weight: 700; border: 1px solid transparent; transition: 0.2s ease; } .btn-primary { background: #ffffff; color: var(--ink); } .btn-primary:hover { transform: translateY(-1px); } .btn-secondary { background: transparent; color: white; border-color: rgba(255,255,255,0.35); } .btn-secondary:hover { background: rgba(255,255,255,0.08); } .hero-side { display: grid; gap: 18px; } .panel, .section-card, .service-card, .testimonial, .contact-card { background: var(--surface); border-radius: var(--radius); box-shadow: var(--shadow); border: 1px solid rgba(255,255,255,0.8); } .logo-panel { min-height: 330px; padding: 28px; display: grid; place-items: center; background: rgba(255,255,255,0.96); border-radius: var(--radius); box-shadow: var(--shadow); } .logo-panel img { width: min(100%, 320px); height: auto; object-fit: contain; } .mini-panel { padding: 24px; background: rgba(255,255,255,0.96); border-radius: var(--radius); box-shadow: var(--shadow); } .mini-panel strong { display: block; margin-bottom: 8px; color: var(--accent); text-transform: uppercase; letter-spacing: 0.10em; font-size: 0.92rem; } .mini-panel p { margin: 0; color: var(--ink); font-size: 1rem; } section { padding: 26px 0; } .section-card { padding: 36px; } .section-label { color: var(--accent); font-size: 12px; text-transform: uppercase; letter-spacing: 0.14em; font-weight: 700; margin-bottom: 12px; } h2 { margin: 0 0 14px; font-size: clamp(1.8rem, 3vw, 3rem); line-height: 1.05; letter-spacing: -0.03em; } h3 { margin-top: 0; margin-bottom: 10px; font-size: 1.18rem; } .lead { max-width: 760px; color: var(--ink-soft); font-size: 1.04rem; } .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 28px; } .list { margin: 0; padding-left: 18px; color: var(--ink-soft); } .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; margin-top: 28px; } .service-card { padding: 28px; } .service-card p { margin: 0; color: var(--ink-soft); } .process-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 28px; } .step { padding: 24px; border-radius: 20px; background: #fff; border: 1px solid var(--line); } .step-number { width: 40px; height: 40px; border-radius: 999px; background: rgba(140, 42, 104, 0.10); color: var(--accent); display: grid; place-items: center; font-weight: 700; margin-bottom: 14px; } .testimonials-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 28px; } .testimonial { padding: 26px; } .testimonial p { margin-top: 0; color: var(--ink-soft); } .testimonial strong { display: block; margin-top: 12px; color: var(--ink); letter-spacing: 0.03em; } .contact-card { padding: 36px; display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 26px; align-items: start; } .contact-box { padding: 22px; border: 1px solid var(--line); border-radius: 18px; background: rgba(67, 72, 102, 0.03); } footer { padding: 28px 0 40px; text-align: center; color: var(--ink-soft); font-size: 14px; } @media (max-width: 980px) { .hero-grid, .about-grid, .services-grid, .process-grid, .testimonials-grid, .contact-card { grid-template-columns: 1fr; } .nav-inner { flex-direction: column; align-items: flex-start; } .hero-card, .section-card, .contact-card { padding: 26px; } } @media (max-width: 640px) { .nav-links { gap: 12px; font-size: 13px; } .hero { padding-top: 24px; } .hero h1 { font-size: 2.3rem; } .btn { width: 100%; } .hero-actions { flex-direction: column; } .logo-panel { min-height: 250px; } } .portfolio-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; margin-top: 28px; } .portfolio-item { position: relative; border-radius: 20px; overflow: hidden; cursor: pointer; background: #ddd; } .portfolio-item img { width: 100%; height: 280px; object-fit: cover; transition: transform 0.5s ease; display: block; } .portfolio-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.68), rgba(0,0,0,0.08)); display: flex; flex-direction: column; justify-content: flex-end; padding: 20px; color: white; opacity: 0; transition: 0.3s ease; } .portfolio-item:hover img { transform: scale(1.05); } .portfolio-item:hover .portfolio-overlay { opacity: 1; } .portfolio-overlay h3 { margin: 0; font-size: 1.2rem; } .portfolio-overlay p { margin: 4px 0 0; font-size: 0.92rem; opacity: 0.92; } @media (max-width: 980px) { .portfolio-grid { grid-template-columns: 1fr; } .portfolio-item img { height: 220px; } } </style> </head> <body> <nav class="nav"> <div class="container nav-inner"> <div class="brand"> <div class="brand-mark"> <img src="./badge.png" alt="COCO DESIGN logo"> </div> <span>COCO DESIGN</span> </div> <div class="nav-links"> <a href="#about">About</a> <a href="#services">Services</a> <a href="#process">Process</a> <a href="#testimonials">Testimonials</a> <a href="#contact">Contact</a> </div> </div> </nav> <main> <section class="hero"> <div class="container"> <div class="hero-card"> <div class="hero-grid"> <div> <span class="eyebrow">Freelance web design for small business</span> <h1>Beautiful websites that feel elevated and work hard for your business.</h1> <p> COCO DESIGN offers freelance web design, ecommerce and digital marketing support for small businesses that want a polished online presence, clearer messaging and a website that feels as professional as the work they do. </p> <div class="hero-actions"> <a class="btn btn-primary" href="#contact">Start your project</a> <a class="btn btn-secondary" href="#services">View services</a> </div> </div> <div class="hero-side"> <div class="logo-panel"> <img src="./badge.png" alt="COCO DESIGN badge logo"> </div> <div class="mini-panel"> <strong>What I do</strong> <p> Freelance web design, ecommerce and digital marketing support tailored to your business. </p> </div> </div> </div> </div> </div> </section> <section id="about"> <div class="container"> <div class="section-card"> <div class="section-label">About</div> <h2>Design that feels polished, strategic and genuinely bespoke.</h2> <p class="lead"> I create bespoke websites for small businesses that want to look more established online. Alongside web design, I also offer freelance digital marketing support to help your brand stay visible, consistent and professionally presented across your wider online presence. The aim is simple: a website that looks premium, feels easy to use and supports real business growth. </p> <div class="about-grid"> <div> <h3>Why clients choose COCO DESIGN</h3> <ul class="list"> <li>Bespoke websites with a refined, brand-led feel</li> <li>Clear, user-friendly design that feels professional</li> <li>Freelance digital marketing support alongside web design</li> <li>A personal, collaborative service from first idea to launch</li> </ul> </div> <div> <h3>Perfect for</h3> <ul class="list"> <li>Small businesses ready to move beyond DIY</li> <li>Brands that want a more elevated online presence</li> <li>Business owners who want support, not just a template</li> <li>Founders who care about quality and presentation</li> </ul> </div> </div> </div> </div> </section> <section id="services"> <div class="container"> <div class="section-card"> <div class="section-label">Services</div> <h2>What I can help with</h2> <p class="lead"> Every project is tailored to your business, your goals and how you want your brand to come across online, from website design and ecommerce to freelance marketing support. </p> <div class="services-grid"> <article class="service-card"> <h3>Website Design</h3> <p> Bespoke brochure-style websites for businesses that need a polished, modern online presence. </p> </article> <article class="service-card"> <h3>Ecommerce</h3> <p> Online shop design and setup focused on trust, clarity and a smooth customer experience. </p> </article> <article class="service-card"> <h3>Branding Support</h3> <p> Design direction and visual consistency so your website feels aligned with your brand. </p> </article> <article class="service-card"> <h3>Website Refreshes</h3> <p> A cleaner, stronger redesign if your current site no longer reflects the level of your business. </p> </article> <article class="service-card"> <h3>Freelance Digital Marketing</h3> <p> Ongoing marketing support for content, campaigns and online visibility, helping your business stay active and professionally presented after launch. </p> </article> <article class="service-card"> <h3>Ongoing Updates</h3> <p> Continued support for website changes, improvements and keeping everything current. </p> </article> </div> </div> </div> </section> <section id="process"> <div class="container"> <div class="section-card"> <div class="section-label">Process</div> <h2>A straightforward process from idea to launch</h2> <p class="lead"> The process is designed to feel calm, collaborative and easy to follow, even if this is your first proper website project. </p> <div class="process-grid"> <div class="step"> <div class="step-number">1</div> <h3>Discover</h3> <p> We look at your business, your goals and the feel you want your brand to communicate. </p> </div> <div class="step"> <div class="step-number">2</div> <h3>Design</h3> <p> I shape the visual direction, layout and messaging into something clear and considered. </p> </div> <div class="step"> <div class="step-number">3</div> <h3>Launch</h3> <p> Your website goes live with support in place if you need help with the next steps. </p> </div> </div> </div> </div> </section> <section id="testimonials"> <div class="container"> <div class="section-card"> <div class="section-label">Testimonials</div> <h2>Kind words from clients</h2> <p class="lead"> Clients often mention the creativity, support, professionalism and how easy the whole process feels. </p> <div class="testimonials-grid"> <article class="testimonial"> <p> Corinna did all my branding, set up my website and is always on hand if I need help. Professional, creative and so easy to deal with. </p> <strong>Lynne McBennett</strong> </article> <article class="testimonial"> <p> Nothing was a problem, always on the other side of the phone if I had any queries. Professional advice, strong design and a real understanding of my needs. </p> <strong>Caroline Murphy</strong> </article> <article class="testimonial"> <p> Corinna designed our website earlier this year. Her work is excellent, efficient and affordable. First class service. </p> <strong>Noelle Grant</strong> </article> </div> </div> </div> </section> <section id="portfolio"> <div class="container"> <div class="section-card"> <div class="section-label">Portfolio</div> <h2>Recent work</h2> <p class="lead"> A selection of recent projects focused on clean design, strong branding and websites that feel premium and perform. </p> <div class="portfolio-grid"> <div class="portfolio-item"> <img src="./project1.png" alt="KIS Coffee Bar website"> <div class="portfolio-overlay"> <h3>KIS Coffee Bar</h3> <p>Coffee & Pizza</p> </div> </div> <div class="portfolio-item"> <img src="./project3.png" alt="Two Guys Coffee"> <div class="portfolio-overlay"> <h3>Two Guys Coffee</h3> <p>Ecommerce design</p> </div> </div> <div class="portfolio-item"> <img src="./project4.png" alt="Blockbusters Environmental Services"> <div class="portfolio-overlay"> <h3>Blockbusters</h3> <p>Corporate Website</p> </div> </div> <div class="portfolio-item"> <img src="./project5.png" alt="Bladecycle Solutions"> <div class="portfolio-overlay"> <h3>Bladecycle Solutions</h3> <p>Sustainability Website</p> </div> </div> <div class="portfolio-item"> <img src="./project6.png" alt="Reline UV Distribution"> <div class="portfolio-overlay"> <h3>Reline UV Distributio</h3> <p>Industrial Liners</p> </div> </div> <div class="portfolio-item"> <img src="./project7.png" alt="Beauty on the Loft"> <div class="portfolio-overlay"> <h3>Beauty on the Loft</h3> <p>Luxury ecommerce</p> </div> </div> </div> </div> </div> </section> <section id="contact"> <div class="container"> <div class="contact-card"> <div> <div class="section-label">Contact</div> <h2>Ready for a website and online presence that feel more like your brand?</h2> <p class="lead"> If you want a site that feels polished, modern and aligned with your business, with freelance marketing support available too, get in touch. </p> <a class="btn btn-primary" href="mailto:info@cocowebdesign.co.uk"> Email Corinna </a> </div> <div class="contact-box"> <h3>Contact details</h3> <p> <strong>Email:</strong> <a href="mailto:info@cocowebdesign.co.uk">info@cocowebdesign.co.uk</a> </p> <p><strong>Location:</strong> Newry | Northern Ireland</p> </div> </div> </div> </section> </main> <footer> <div class="container"> © COCO DESIGN </div> </footer> </body> </html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <title>COCO DESIGN | Freelance Web Design, Ecommerce & Digital Marketing</title>
+  <meta name="description" content="COCO DESIGN offers freelance web design, ecommerce and digital marketing support for small businesses." />
+  <link rel="icon" type="image/png" href="./favicon.png" />
+
+  <style>
+    :root {
+      --bg: #f7f4f6;
+      --surface: #ffffff;
+      --ink: #434866;
+      --ink-soft: #6f7690;
+      --accent: #8c2a68;
+      --accent-soft: #b57ba0;
+      --hero-start: #4a5070;
+      --hero-end: #8c2a68;
+      --line: rgba(67, 72, 102, 0.12);
+      --shadow: 0 20px 60px rgba(67, 72, 102, 0.12);
+      --radius: 24px;
+      --max: 1160px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      color: var(--ink);
+      line-height: 1.6;
+    }
+
+    h1, h2 {
+      font-family: 'Playfair Display', serif;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+    }
+
+    h1 {
+      font-weight: 700;
+    }
+
+    h3 {
+      font-family: 'Inter', sans-serif;
+      font-weight: 600;
+    }
+
+    p {
+      font-weight: 400;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    a:hover {
+      opacity: 0.9;
+    }
+
+    .container {
+      width: min(var(--max), calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(247, 244, 246, 0.92);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .nav-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      padding: 16px 0;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      color: var(--ink);
+    }
+
+    .brand-mark {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      overflow: hidden;
+      flex-shrink: 0;
+      background: #fff;
+      border: 1px solid var(--line);
+    }
+
+    .brand-mark img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      font-size: 14px;
+    }
+
+    .nav-links a {
+      color: var(--ink);
+      font-weight: 500;
+    }
+
+    .nav-links a:hover {
+      color: var(--accent);
+    }
+
+    .hero {
+      padding: 42px 0 28px;
+    }
+
+    .hero-card {
+      background: linear-gradient(135deg, var(--hero-start) 0%, #59617f 45%, var(--hero-end) 100%);
+      color: white;
+      border-radius: 34px;
+      padding: 34px;
+      box-shadow: 0 30px 80px rgba(67, 72, 102, 0.20);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-card::before {
+      content: "";
+      position: absolute;
+      top: -140px;
+      right: -120px;
+      width: 340px;
+      height: 340px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.08);
+    }
+
+    .hero-card::after {
+      content: "";
+      position: absolute;
+      bottom: -140px;
+      left: -120px;
+      width: 300px;
+      height: 300px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.05);
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 28px;
+      align-items: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.14);
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      font-weight: 700;
+      margin-bottom: 18px;
+    }
+
+    .hero h1 {
+      margin: 0 0 18px;
+      font-size: clamp(2.7rem, 5vw, 5.2rem);
+      line-height: 0.95;
+      letter-spacing: -0.04em;
+      font-weight: 700;
+    }
+
+    .hero p {
+      margin: 0 0 28px;
+      font-size: 1.08rem;
+      color: rgba(255,255,255,0.92);
+      max-width: 640px;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 50px;
+      padding: 0 22px;
+      border-radius: 999px;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      border: 1px solid transparent;
+      transition: 0.2s ease;
+    }
+
+    .btn-primary {
+      background: #ffffff;
+      color: var(--ink);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-1px);
+    }
+
+    .btn-secondary {
+      background: transparent;
+      color: white;
+      border-color: rgba(255,255,255,0.35);
+    }
+
+    .btn-secondary:hover {
+      background: rgba(255,255,255,0.08);
+    }
+
+    .hero-side {
+      display: grid;
+      gap: 18px;
+    }
+
+    .panel,
+    .section-card,
+    .service-card,
+    .testimonial,
+    .contact-card {
+      background: var(--surface);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      border: 1px solid rgba(255,255,255,0.8);
+    }
+
+    .logo-panel {
+      min-height: 330px;
+      padding: 28px;
+      display: grid;
+      place-items: center;
+      background: rgba(255,255,255,0.96);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    .logo-panel img {
+      width: min(100%, 320px);
+      height: auto;
+      object-fit: contain;
+    }
+
+    .mini-panel {
+      padding: 24px;
+      background: rgba(255,255,255,0.96);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    .mini-panel strong {
+      display: block;
+      margin-bottom: 8px;
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 0.10em;
+      font-size: 0.92rem;
+    }
+
+    .mini-panel p {
+      margin: 0;
+      color: var(--ink);
+      font-size: 1rem;
+    }
+
+    section {
+      padding: 26px 0;
+    }
+
+    .section-card {
+      padding: 36px;
+    }
+
+    .section-label {
+      color: var(--accent);
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+
+    h2 {
+      margin: 0 0 14px;
+      font-size: clamp(1.8rem, 3vw, 3rem);
+      line-height: 1.05;
+      letter-spacing: -0.03em;
+    }
+
+    h3 {
+      margin-top: 0;
+      margin-bottom: 10px;
+      font-size: 1.18rem;
+    }
+
+    .lead {
+      max-width: 760px;
+      color: var(--ink-soft);
+      font-size: 1.08rem;
+      line-height: 1.7;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      margin-top: 28px;
+    }
+
+    .list {
+      margin: 0;
+      padding-left: 18px;
+      color: var(--ink-soft);
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+      margin-top: 28px;
+    }
+
+    .service-card {
+      padding: 28px;
+    }
+
+    .service-card p {
+      margin: 0;
+      color: var(--ink-soft);
+    }
+
+    .process-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      margin-top: 28px;
+    }
+
+    .step {
+      padding: 24px;
+      border-radius: 20px;
+      background: #fff;
+      border: 1px solid var(--line);
+    }
+
+    .step-number {
+      width: 40px;
+      height: 40px;
+      border-radius: 999px;
+      background: rgba(140, 42, 104, 0.10);
+      color: var(--accent);
+      display: grid;
+      place-items: center;
+      font-weight: 700;
+      margin-bottom: 14px;
+    }
+
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      margin-top: 28px;
+    }
+
+    .testimonial {
+      padding: 26px;
+    }
+
+    .testimonial p {
+      margin-top: 0;
+      color: var(--ink-soft);
+    }
+
+    .testimonial strong {
+      display: block;
+      margin-top: 12px;
+      color: var(--ink);
+      letter-spacing: 0.03em;
+    }
+
+    .contact-card {
+      padding: 36px;
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 26px;
+      align-items: start;
+    }
+
+    .contact-box {
+      padding: 22px;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      background: rgba(67, 72, 102, 0.03);
+    }
+
+    footer {
+      padding: 28px 0 40px;
+      text-align: center;
+      color: var(--ink-soft);
+      font-size: 14px;
+    }
+
+    @media (max-width: 980px) {
+      .hero-grid,
+      .about-grid,
+      .services-grid,
+      .process-grid,
+      .testimonials-grid,
+      .contact-card {
+        grid-template-columns: 1fr;
+      }
+
+      .nav-inner {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .hero-card,
+      .section-card,
+      .contact-card {
+        padding: 26px;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .nav-links {
+        gap: 12px;
+        font-size: 13px;
+      }
+
+      .hero {
+        padding-top: 24px;
+      }
+
+      .hero h1 {
+        font-size: 2.3rem;
+      }
+
+      .btn {
+        width: 100%;
+      }
+
+      .hero-actions {
+        flex-direction: column;
+      }
+
+      .logo-panel {
+        min-height: 250px;
+      }
+    }
+
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+      margin-top: 28px;
+    }
+
+    .portfolio-item {
+      position: relative;
+      border-radius: 20px;
+      overflow: hidden;
+      cursor: pointer;
+      background: #ddd;
+    }
+
+    .portfolio-item img {
+      width: 100%;
+      height: 280px;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+      display: block;
+    }
+
+    .portfolio-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(0,0,0,0.68), rgba(0,0,0,0.08));
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 20px;
+      color: white;
+      opacity: 0;
+      transition: 0.3s ease;
+    }
+
+    .portfolio-item:hover img {
+      transform: scale(1.05);
+    }
+
+    .portfolio-item:hover .portfolio-overlay {
+      opacity: 1;
+    }
+
+    .portfolio-overlay h3 {
+      margin: 0;
+      font-size: 1.2rem;
+    }
+
+    .portfolio-overlay p {
+      margin: 4px 0 0;
+      font-size: 0.92rem;
+      opacity: 0.92;
+    }
+
+    @media (max-width: 980px) {
+      .portfolio-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .portfolio-item img {
+        height: 220px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav class="nav">
+    <div class="container nav-inner">
+      <div class="brand">
+        <div class="brand-mark">
+          <img src="./badge.png" alt="COCO DESIGN logo">
+        </div>
+        <span>COCO DESIGN</span>
+      </div>
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#process">Process</a>
+        <a href="#testimonials">Testimonials</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <section class="hero">
+      <div class="container">
+        <div class="hero-card">
+          <div class="hero-grid">
+            <div>
+              <span class="eyebrow">Freelance web design for small business</span>
+              <h1>Beautiful websites that feel elevated and work hard for your business.</h1>
+              <p>
+                COCO DESIGN offers freelance web design, ecommerce and digital marketing support
+                for small businesses that want a polished online presence, clearer messaging and
+                a website that feels as professional as the work they do.
+              </p>
+
+              <div class="hero-actions">
+                <a class="btn btn-primary" href="#contact">Start your project</a>
+                <a class="btn btn-secondary" href="#services">View services</a>
+              </div>
+            </div>
+
+            <div class="hero-side">
+              <div class="logo-panel">
+                <img src="./badge.png" alt="COCO DESIGN badge logo">
+              </div>
+
+              <div class="mini-panel">
+                <strong>What I do</strong>
+                <p>
+                  Freelance web design, ecommerce and digital marketing support tailored to your business.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="container">
+        <div class="section-card">
+          <div class="section-label">About</div>
+          <h2>Design that feels polished, strategic and genuinely bespoke.</h2>
+          <p class="lead">
+            I create bespoke websites for small businesses that want to look more established online.
+            Alongside web design, I also offer freelance digital marketing support to help your brand
+            stay visible, consistent and professionally presented across your wider online presence.
+            The aim is simple: a website that looks premium, feels easy to use and supports real business growth.
+          </p>
+
+          <div class="about-grid">
+            <div>
+              <h3>Why clients choose COCO DESIGN</h3>
+              <ul class="list">
+                <li>Bespoke websites with a refined, brand-led feel</li>
+                <li>Clear, user-friendly design that feels professional</li>
+                <li>Freelance digital marketing support alongside web design</li>
+                <li>A personal, collaborative service from first idea to launch</li>
+              </ul>
+            </div>
+
+            <div>
+              <h3>Perfect for</h3>
+              <ul class="list">
+                <li>Small businesses ready to move beyond DIY</li>
+                <li>Brands that want a more elevated online presence</li>
+                <li>Business owners who want support, not just a template</li>
+                <li>Founders who care about quality and presentation</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="services">
+      <div class="container">
+        <div class="section-card">
+          <div class="section-label">Services</div>
+          <h2>What I can help with</h2>
+          <p class="lead">
+            Every project is tailored to your business, your goals and how you want your brand to
+            come across online, from website design and ecommerce to freelance marketing support.
+          </p>
+
+          <div class="services-grid">
+            <article class="service-card">
+              <h3>Website Design</h3>
+              <p>
+                Bespoke brochure-style websites for businesses that need a polished, modern online presence.
+              </p>
+            </article>
+
+            <article class="service-card">
+              <h3>Ecommerce</h3>
+              <p>
+                Online shop design and setup focused on trust, clarity and a smooth customer experience.
+              </p>
+            </article>
+
+            <article class="service-card">
+              <h3>Branding Support</h3>
+              <p>
+                Design direction and visual consistency so your website feels aligned with your brand.
+              </p>
+            </article>
+
+            <article class="service-card">
+              <h3>Website Refreshes</h3>
+              <p>
+                A cleaner, stronger redesign if your current site no longer reflects the level of your business.
+              </p>
+            </article>
+
+            <article class="service-card">
+              <h3>Freelance Digital Marketing</h3>
+              <p>
+                Ongoing marketing support for content, campaigns and online visibility, helping your business
+                stay active and professionally presented after launch.
+              </p>
+            </article>
+
+            <article class="service-card">
+              <h3>Ongoing Updates</h3>
+              <p>
+                Continued support for website changes, improvements and keeping everything current.
+              </p>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="process">
+      <div class="container">
+        <div class="section-card">
+          <div class="section-label">Process</div>
+          <h2>A straightforward process from idea to launch</h2>
+          <p class="lead">
+            The process is designed to feel calm, collaborative and easy to follow, even if this is
+            your first proper website project.
+          </p>
+
+          <div class="process-grid">
+            <div class="step">
+              <div class="step-number">1</div>
+              <h3>Discover</h3>
+              <p>
+                We look at your business, your goals and the feel you want your brand to communicate.
+              </p>
+            </div>
+
+            <div class="step">
+              <div class="step-number">2</div>
+              <h3>Design</h3>
+              <p>
+                I shape the visual direction, layout and messaging into something clear and considered.
+              </p>
+            </div>
+
+            <div class="step">
+              <div class="step-number">3</div>
+              <h3>Launch</h3>
+              <p>
+                Your website goes live with support in place if you need help with the next steps.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="testimonials">
+      <div class="container">
+        <div class="section-card">
+          <div class="section-label">Testimonials</div>
+          <h2>Kind words from clients</h2>
+          <p class="lead">
+            Clients often mention the creativity, support, professionalism and how easy the whole
+            process feels.
+          </p>
+
+          <div class="testimonials-grid">
+            <article class="testimonial">
+              <p>
+                Corinna did all my branding, set up my website and is always on hand if I need help.
+                Professional, creative and so easy to deal with.
+              </p>
+              <strong>Lynne McBennett</strong>
+            </article>
+
+            <article class="testimonial">
+              <p>
+                Nothing was a problem, always on the other side of the phone if I had any queries.
+                Professional advice, strong design and a real understanding of my needs.
+              </p>
+              <strong>Caroline Murphy</strong>
+            </article>
+
+            <article class="testimonial">
+              <p>
+                Corinna designed our website earlier this year. Her work is excellent, efficient and affordable. First class service.
+              </p>
+              <strong>Noelle Grant</strong>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="portfolio">
+      <div class="container">
+        <div class="section-card">
+          <div class="section-label">Portfolio</div>
+          <h2>Recent work</h2>
+          <p class="lead">
+            A selection of recent projects focused on clean design, strong branding and websites that feel premium and perform.
+          </p>
+
+          <div class="portfolio-grid">
+            <div class="portfolio-item">
+              <img src="./project1.png" alt="KIS Coffee Bar website">
+              <div class="portfolio-overlay">
+                <h3>KIS Coffee Bar</h3>
+                <p>Coffee & Pizza</p>
+              </div>
+            </div>
+
+            <div class="portfolio-item">
+              <img src="./project3.png" alt="Two Guys Coffee">
+              <div class="portfolio-overlay">
+                <h3>Two Guys Coffee</h3>
+                <p>Ecommerce design</p>
+              </div>
+            </div>
+
+            <div class="portfolio-item">
+              <img src="./project4.png" alt="Blockbusters Environmental Services">
+              <div class="portfolio-overlay">
+                <h3>Blockbusters</h3>
+                <p>Corporate Website</p>
+              </div>
+            </div>
+
+            <div class="portfolio-item">
+              <img src="./project5.png" alt="Bladecycle Solutions">
+              <div class="portfolio-overlay">
+                <h3>Bladecycle Solutions</h3>
+                <p>Sustainability Website</p>
+              </div>
+            </div>
+
+            <div class="portfolio-item">
+              <img src="./project6.png" alt="Reline UV Distribution">
+              <div class="portfolio-overlay">
+                <h3>Reline UV Distributio</h3>
+                <p>Industrial Liners</p>
+              </div>
+            </div>
+
+            <div class="portfolio-item">
+              <img src="./project7.png" alt="Beauty on the Loft">
+              <div class="portfolio-overlay">
+                <h3>Beauty on the Loft</h3>
+                <p>Luxury ecommerce</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container">
+        <div class="contact-card">
+          <div>
+            <div class="section-label">Contact</div>
+            <h2>Ready for a website and online presence that feel more like your brand?</h2>
+            <p class="lead">
+              If you want a site that feels polished, modern and aligned with your business, with freelance
+              marketing support available too, get in touch.
+            </p>
+
+            <a class="btn btn-primary" href="mailto:info@cocowebdesign.co.uk">
+              Email Corinna
+            </a>
+          </div>
+
+          <div class="contact-box">
+            <h3>Contact details</h3>
+            <p>
+              <strong>Email:</strong>
+              <a href="mailto:info@cocowebdesign.co.uk">info@cocowebdesign.co.uk</a>
+            </p>
+            <p><strong>Location:</strong> Newry | Northern Ireland</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      © COCO DESIGN
+    </div>
+  </footer>
+</body>
+</html>
