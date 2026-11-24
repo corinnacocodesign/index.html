@@ -394,15 +394,38 @@
       margin-bottom: 14px;
     }
 .service-icon {
-  width: 42px;
-  height: 42px;
-  border-radius: 999px;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
   background: rgba(140, 42, 104, 0.10);
   color: var(--accent);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 14px;
+  display: grid;
+  place-items: center;
+  margin-bottom: 18px;
+}
+
+.service-icon svg {
+  width: 22px;
+  height: 22px;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.service-card {
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+@media (hover: hover) {
+  .service-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 24px 65px rgba(67, 72, 102, 0.16);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .service-card {
+    transition: none;
+  }
 }
     .testimonials-grid {
       display: grid;
